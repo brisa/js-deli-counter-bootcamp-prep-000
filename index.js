@@ -9,18 +9,11 @@ let katzDeli = [];
   katzDeli.push(`${name}`);
   return(`Welcome, ${name}. You are number ${katzDeli.length} in line.`);
 }
-function nowServing(array){
-    let katzDeliLine = array
-if(katzDeliLine.length > 2){
-    return "Currently serving " + katzDeliLine[0]+ "."
-}
-else if (katzDeliLine.length > 0)
-       for (let i = 0; i < katzDeliLine.length; i++) {
-         katzDeliLine.shift(0);
-         return "Currently serving " +katzDeliLine[0]+ "."
-       }
-               
-else {
-    return "There is nobody waiting to be served!"
-    }
+function nowServing(katzDeliLine){
+  if (katzDeliLine.length > 0) {
+     return `Currently serving ${katzDeliLine.shift()}.`
+  }
+  else {
+    return "There is nobody waiting to be served!";
+  }
 }
